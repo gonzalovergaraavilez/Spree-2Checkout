@@ -1,6 +1,6 @@
 module Spree
   CheckoutController.class_eval do
-    skip_before_filter :verify_authenticity_token, :ensure_valid_state
+    skip_before_action :verify_authenticity_token, :ensure_valid_state
     before_filter :two_checkout_hook, :only => [:update]
 
     helper_method :payment_method
